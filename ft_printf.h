@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:59:20 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/19 14:23:46 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:12:03 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 
-void	to_hex(unsigned long nb, char c, char turn, int *size);
+void	to_hex(unsigned long nb, char c, char p, int *size);
 void	ft_putstr(char *str, int *size);
 void	ft_putnbr_long(long nb, int	*size);
 
