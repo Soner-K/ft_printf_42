@@ -4,8 +4,6 @@ HEADER		=	ft_printf.h
 
 OBJ		=	$(SRC:.c=.o)
 
-OBJ_BONUS	=	$(SRC_BONUS:.c=.o)
-
 NAME		=	libftprintf.a
 
 CC		=	cc
@@ -18,19 +16,16 @@ $(NAME)		:	$(OBJ)
 			make -C libft
 			cp libft/libft.a $(NAME)
 			ar -q $(NAME) $(OBJ)
-
-bonus		:	$(NAME) $(OBJ_BONUS)
-			ar -rc $(NAME) $(OBJ_BONUS)
 			
 %.o		:	%.c
 			$(CC) $(CFLAGS) -c $< -o $@
 
-clean		:	
-			rm -f $(OBJ) $(OBJ_BONUS)
+clean			:	
+			rm -f $(OBJ) libft/*.o libft/*.gch
 
 fclean		:	clean
-			rm -f $(NAME)
+			rm -f $(NAME) libft/libft.a
 
 re		:	fclean all
 
-.PHONY		:	all clean fclean re bonus
+.PHONY		:	all clean fclean re

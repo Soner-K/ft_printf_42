@@ -6,7 +6,7 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:07:37 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/22 16:09:10 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/10 15:53:42 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_printf(const char *str, ...)
 	va_list	arg;
 	int		size;
 
+	if (!str)
+		return (-1);
 	va_start(arg, str);
 	size = 0;
 	while (*str)
