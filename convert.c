@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 /*a putnbr that receives a long (so that it can deal with both INT_MIN and UNSIGNED_INT_MAX)
 with also a pointer to size that is increased by each call to the ft_putnbr_long function*/
