@@ -1,6 +1,6 @@
 SRC			=	src/ft_printf.c src/convert.c
 
-SRC_LIBFT	=	../src/ft_putchar_fd.c ../src/ft_putstr_fd.c ../src/ft_strlen.c
+SRC_LIBFT	=	libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_strlen.c
 
 HEADER		=	includes/ft_printf.h
 
@@ -17,8 +17,8 @@ EXEC	=	exec
 all		:	$(NAME)
 
 $(NAME)		:	$(OBJ)
-			make -C ../
-			cp ../libft.a $(NAME)
+			make -C ../libft
+			cp ../libft/libft.a $(NAME)
 			ar -q $(NAME) $(OBJ)
 			
 %.o		:	%.c
