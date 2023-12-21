@@ -1,31 +1,41 @@
-SRC		=	ft_printf.c convert.c
+SRC			=	src/ft_printf.c src/convert.c
 
-HEADER		=	ft_printf.h
+SRC_LIBFT	=	../src/ft_putchar_fd.c ../src/ft_putstr_fd.c ../src/ft_strlen.c
 
-OBJ		=	$(SRC:.c=.o)
+HEADER		=	includes/ft_printf.h
+
+OBJ			=	$(SRC:.c=.o)
 
 NAME		=	libftprintf.a
 
-CC		=	cc
+CC			=	cc
 
 CFLAGS		=	-Wall -Wextra -Werror
+
+EXEC	=	exec
 
 all		:	$(NAME)
 
 $(NAME)		:	$(OBJ)
-			make -C libft
-			cp libft/libft.a $(NAME)
+			make -C ../
+			cp ../libft.a $(NAME)
 			ar -q $(NAME) $(OBJ)
 			
 %.o		:	%.c
 			$(CC) $(CFLAGS) -c $< -o $@
 
 clean			:	
-			rm -f $(OBJ) libft/*.o libft/*.gch
+			rm -f $(OBJ) ../src/*.o ../src/*.gch $(EXEC)
 
 fclean		:	clean
-			rm -f $(NAME) libft/libft.a
+			rm -f $(NAME) ../libft.a
 
 re		:	fclean all
 
-.PHONY		:	all clean fclean re
+$(EXEC)		:	$(SRC) $(SRC_LIBFT)
+				@$(CC) $(CFLAGS) $^ -o $@
+
+run			:	$(EXEC)
+				@./$(EXEC)
+
+.PHONY		:	all clean fclean re run exec

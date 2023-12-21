@@ -6,11 +6,11 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:07:37 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/12/10 15:53:42 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/21 10:38:39 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 /*this function checks the character after a % and does the necessary accordingly*/
 static void	ft_check_and_print(const char **str, char c, va_list arg, int *size)
@@ -37,6 +37,7 @@ static void	ft_check_and_print(const char **str, char c, va_list arg, int *size)
 		ft_putnbr_long((unsigned int) va_arg(arg, unsigned int), size);
 	(*str) += 2;
 }
+
 /*my printf, which writes str until a %, then check 
 what the character is and write whats needs to be written*/
 int	ft_printf(const char *str, ...)
@@ -61,4 +62,9 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(arg);
 	return (size);
+}
+
+int main()
+{
+	ft_printf("Salut %s", "Soner");
 }

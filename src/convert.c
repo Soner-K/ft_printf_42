@@ -6,11 +6,11 @@
 /*   By: sokaraku <sokaraku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:12:23 by sokaraku          #+#    #+#             */
-/*   Updated: 2023/11/22 16:13:05 by sokaraku         ###   ########.fr       */
+/*   Updated: 2023/12/21 10:38:50 by sokaraku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 /*a putnbr that receives a long (so that it can deal with both INT_MIN and UNSIGNED_INT_MAX)
 with also a pointer to size that is increased by each call to the ft_putnbr_long function*/
@@ -47,6 +47,7 @@ void	ft_putstr(char *str, int *size)
 	while (*str)
 		ft_putchar_fd(*str++, 1);
 }
+
 /*basically a putnbr but in hexadecimal format
 the format is modified in function of the character c sent (x or X)
 p is a binary used only in the first call of the function. If it is 1
